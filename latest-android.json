@@ -1,7 +1,7 @@
 {
-  "versionName": "1.1.9",
-  "versionCode": 19,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.9/NOVA-AI-Android-1.1.9.apk",
-  "sha256": "3F964E27028F89B3E7BB5A1D288D64F1C1B82B2E0EBA8364CCFCD1921AEEE6B1",
-  "notes": "Добавлены русский, украинский и английский языки интерфейса, настройка веб-поиска и редактор профиля с фотографией."
+  "versionName": "1.2.0",
+  "versionCode": 20,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.2.0/NOVA-AI-Android-1.2.0.apk",
+  "sha256": "4822A5A647BEF5E2F0056D23D0E83118BA67139C0A796B4EEECC364F51CBB0D7",
+  "notes": "В разделе «Информация» добавлен статус результата проверки обновлений."
 }
