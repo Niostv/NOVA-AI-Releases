@@ -2,6 +2,6 @@
   "versionName": "1.1.2",
   "versionCode": 12,
   "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.2/NOVA-AI-Android-1.1.2.apk",
-  "sha256": "810CCF380D6C3FE1D7A807C5488FDB164E5368DCD0587C49E36C68598E9AC540",
-  "notes": "Исправлена совместимость установки Android. Добавлено безопасное автообновление: проверка версии, загрузка с прогрессом, SHA-256 и системная установка."
+  "sha256": "6B6EE644948D0694F485B181B8D34060ED65C973057C365178507DA662294E51",
+  "notes": "Исправлена установка на современных телефонах: minSdk 23, targetSdk 35, корректная упаковка DEX, zipalign и подписи v1/v2/v3."
 }
