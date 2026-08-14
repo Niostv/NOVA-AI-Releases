@@ -1,7 +1,7 @@
 {
-  "versionName": "1.1.6",
-  "versionCode": 16,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.6/NOVA-AI-Android-1.1.6.apk",
-  "sha256": "3421B2ED85466A46BF43199905EE90DB984D88E09E43882F45EFCB25B9C783C2",
-  "notes": "Добавлена адаптация интерфейса под чёлки, камеры и системные панели Android."
+  "versionName": "1.1.7",
+  "versionCode": 17,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.7/NOVA-AI-Android-1.1.7.apk",
+  "sha256": "42A360C587203EB46595799D74A8B5D213A0A45DB5CDA4B49A1616BF9B25057D",
+  "notes": "Полностью переработаны настройки Android: профиль, персонализация, память, тема, голос, уведомления, безопасность, хранилище и данные."
 }
