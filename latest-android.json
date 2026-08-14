@@ -1,7 +1,7 @@
 {
-  "versionName": "1.1.8",
-  "versionCode": 18,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.8/NOVA-AI-Android-1.1.8.apk",
-  "sha256": "EC5CD086308066E84230BE3E9B3654962690FD8A7401AAB95A12A81E7F8FE47B",
-  "notes": "Добавлены отдельные категории уведомлений NOVA. Все включены по умолчанию и настраиваются независимо."
+  "versionName": "1.1.9",
+  "versionCode": 19,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.9/NOVA-AI-Android-1.1.9.apk",
+  "sha256": "3F964E27028F89B3E7BB5A1D288D64F1C1B82B2E0EBA8364CCFCD1921AEEE6B1",
+  "notes": "Добавлены русский, украинский и английский языки интерфейса, настройка веб-поиска и редактор профиля с фотографией."
 }
