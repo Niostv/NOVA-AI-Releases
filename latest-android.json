@@ -1,7 +1,7 @@
 {
-  "versionName": "1.2.1",
-  "versionCode": 21,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.2.1/NOVA-AI-Android-1.2.1.apk",
-  "sha256": "D6B3111D1748E473F384E043172FC1E2E9F992F235B3BE77EE9E800189293CF0",
-  "notes": "На Android убраны подсказки Ctrl N и Ctrl K из мобильного меню."
+  "versionName": "1.2.2",
+  "versionCode": 22,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.2.2/NOVA-AI-Android-1.2.2.apk",
+  "sha256": "038A688CC2F2E2D13D487E6E9826FF56EC45718953E8CB228EF52AA9649B1E80",
+  "notes": "Полный перевод интерфейса и всех настроек на русский, украинский и английский языки."
 }
