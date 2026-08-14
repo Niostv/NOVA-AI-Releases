@@ -1,6 +1,6 @@
 {
   "version": "1.1.2",
-  "download": "https://raw.githubusercontent.com/Niostv/NOVA-AI-Releases/main/NOVA-AI-Windows-1.1.1-test.zip",
+  "download": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.0/NOVA-AI-Windows-1.1.2.zip",
   "sha256": "992F720F53B8C7C9EF678E775B87C8017F8AC635BB74D01F5442F9E965369460",
-  "notes": "Test update NOVA AI 1.1.1. Download, install and restart check."
+  "notes": "Test update NOVA AI 1.1.2. Download, install and restart check."
 }
