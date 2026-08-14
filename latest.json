@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "download": "https://nova-ai.app/update/NOVA-AI-Windows-1.1.0.zip",
+  "download": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.0/NOVA-AI-Windows-1.1.0.zip",
   "sha256": "9FEBD8B2F5379032C9CD04112F078BAAB9EB8A992532E520B414561402BBFEE6",
   "notes": "Добавлены AI-разработчик, игровые проекты, память проектов и безопасные автообновления."
 }
