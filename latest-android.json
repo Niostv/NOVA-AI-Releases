@@ -1,7 +1,7 @@
 {
-  "versionName": "1.2.2",
-  "versionCode": 22,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.2.2/NOVA-AI-Android-1.2.2.apk",
-  "sha256": "038A688CC2F2E2D13D487E6E9826FF56EC45718953E8CB228EF52AA9649B1E80",
-  "notes": "Полный перевод интерфейса и всех настроек на русский, украинский и английский языки."
+  "versionName": "1.2.3",
+  "versionCode": 23,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.2.3/NOVA-AI-Android-1.2.3.apk",
+  "sha256": "CC92DF366220CBC40E478577E49AB90D84F1E35AF5C555798B1C5C11E36DF782",
+  "notes": "Добавлена актуальная аналитика P2P-курсов, рынков, цен и спредов через P2P Army."
 }
