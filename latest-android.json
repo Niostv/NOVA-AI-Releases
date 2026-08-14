@@ -1,7 +1,7 @@
 {
-  "versionName": "1.1.5",
-  "versionCode": 15,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.5/NOVA-AI-Android-1.1.5.apk",
-  "sha256": "EF90C1ED07D48CBDF4AC4A9AC7E6DD0F3F6EBC276629634C1514786955BE4A63",
-  "notes": "Убрана кнопка с тремя точками рядом с переключателем темы."
+  "versionName": "1.1.6",
+  "versionCode": 16,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.6/NOVA-AI-Android-1.1.6.apk",
+  "sha256": "3421B2ED85466A46BF43199905EE90DB984D88E09E43882F45EFCB25B9C783C2",
+  "notes": "Добавлена адаптация интерфейса под чёлки, камеры и системные панели Android."
 }
