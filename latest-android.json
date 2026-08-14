@@ -1,7 +1,7 @@
 {
-  "versionName": "1.1.2",
-  "versionCode": 12,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.2/NOVA-AI-Android-1.1.2.apk",
-  "sha256": "6B6EE644948D0694F485B181B8D34060ED65C973057C365178507DA662294E51",
-  "notes": "Исправлена установка на современных телефонах: minSdk 23, targetSdk 35, корректная упаковка DEX, zipalign и подписи v1/v2/v3."
+  "versionName": "1.1.3",
+  "versionCode": 13,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.3/NOVA-AI-Android-1.1.3.apk",
+  "sha256": "D1BAC01A1AA135C306121099D70DCFF7682347FAAB8C913F88F81F4E23B4153E",
+  "notes": "Тестовое обновление Android Updater с версии 1.1.2 до 1.1.3."
 }
