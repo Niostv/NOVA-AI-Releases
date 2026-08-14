@@ -2,6 +2,6 @@
   "versionName": "1.1.5",
   "versionCode": 15,
   "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.5/NOVA-AI-Android-1.1.5.apk",
-  "sha256": "62407DC7A469156667377D543BAFAD33143D05EC7A507DC02E286AF16D59BDD4",
-  "notes": "Тестовое обновление Android. После установки версии 1.1.5 кнопка обновления должна исчезнуть."
+  "sha256": "EF90C1ED07D48CBDF4AC4A9AC7E6DD0F3F6EBC276629634C1514786955BE4A63",
+  "notes": "Убрана кнопка с тремя точками рядом с переключателем темы."
 }
