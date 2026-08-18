@@ -1,7 +1,7 @@
 {
-  "versionName": "1.1.2",
-  "versionCode": 12,
-  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.2/NOVA-AI-Android-1.1.2.apk",
-  "sha256": "0661880A6BEA74F0A9B6239F82FA2280B52F53C47C3AFD7561CADE5EA53D8D37",
-  "notes": "Добавлено безопасное автообновление Android: проверка версии, загрузка с прогрессом, SHA-256 и системная установка."
+  "versionName": "1.3.1",
+  "versionCode": 31,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.3.1/NOVA-AI-Android-1.3.1.apk",
+  "sha256": "17A7C8E8199F45F808D95017D430C43D6F7A885CA48917EF9C8FE7BD189ACD2A",
+  "notes": "Исправлено движение окна ввода на телефоне при открытии клавиатуры. Обновлён автообновлятель и подписан новый релиз."
 }
