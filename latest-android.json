@@ -1,0 +1,7 @@
+{
+  "versionName": "1.1.2",
+  "versionCode": 12,
+  "apkUrl": "https://github.com/Niostv/NOVA-AI-Releases/releases/download/v1.1.2/NOVA-AI-Android-1.1.2.apk",
+  "sha256": "0661880A6BEA74F0A9B6239F82FA2280B52F53C47C3AFD7561CADE5EA53D8D37",
+  "notes": "Добавлено безопасное автообновление Android: проверка версии, загрузка с прогрессом, SHA-256 и системная установка."
+}

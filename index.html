@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#08090c" />
+  <title>NOVA AI — локальный AI-ассистент</title>
+  <meta name="description" content="NOVA AI — приватный мультимодальный AI-ассистент с поддержкой Ollama." />
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="apple-touch-icon" href="images/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="image.css" />
+  <link rel="stylesheet" href="voice-mode.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Боковая панель">
+      <div class="brand-row">
+        <button class="brand" data-action="new-chat" aria-label="NOVA AI, новый чат"><span class="brand-mark"><img src="images/icon.png" alt="" /></span><span>NOVA <i>AI</i></span></button>
+        <button class="icon-btn collapse-btn" id="collapseBtn" aria-label="Свернуть панель">‹</button>
+      </div>
+      <button class="new-chat" data-action="new-chat"><span>＋</span><b>Новый чат</b><kbd>Ctrl N</kbd></button>
+      <nav class="primary-nav">
+        <button data-action="search"><span>⌕</span><b>Поиск</b><kbd>Ctrl K</kbd></button>
+        <button data-tool="images"><span>▧</span><b>Изображения</b></button>
+        <button data-tool="files"><span>⌑</span><b>Файлы</b></button>
+        <button data-action="voice"><span>◉</span><b>Голос</b></button>
+        <button data-tool="internet"><span>◎</span><b>Интернет</b></button>
+      </nav>
+      <div class="history" id="history"></div>
+      <button class="profile" data-action="settings">
+        <span class="avatar">М</span><span class="profile-copy"><b>Мой профиль</b><small id="providerLabel">Ollama · локально</small></span><span>⚙</span>
+      </button>
+    </aside>
+
+    <div class="mobile-backdrop" id="backdrop"></div>
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button>
+        <div class="model-pill"><span class="status-dot"></span><span id="modelLabel">NOVA Local</span><small>⌄</small></div>
+        <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="Сменить тему">◐</button><button class="icon-btn" data-action="settings" aria-label="Настройки">•••</button></div>
+      </header>
+
+      <section class="chat" id="chat" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="nova-orb"><div></div><span>✦</span></div>
+          <p class="eyebrow">ВАШЕ ПРОСТРАНСТВО ДЛЯ ИДЕЙ</p>
+          <h1>Чем я могу <em>помочь?</em></h1>
+          <p class="welcome-copy">Обсудим идею, разберём документ или превратим мысль в готовый результат.</p>
+          <div class="suggestions">
+            <button data-prompt="Сколько сейчас подписчиков у этого блогера? Проверь актуальные источники."><span class="chip-icon blue">◎</span><b>Актуальные данные</b><small>Статистика и источники в интернете</small></button>
+            <button data-prompt="Футуристический город на закате, кинематографичный свет, высокая детализация" data-image-mode="true"><span class="chip-icon violet">✦</span><b>Создать изображение</b><small>Визуализировать любую идею</small></button>
+            <button data-action="attach"><span class="chip-icon amber">⌑</span><b>Проанализировать файл</b><small>PDF, текст или изображение</small></button>
+            <button data-action="voice"><span class="chip-icon green">◉</span><b>Поговорить голосом</b><small>Без клавиатуры</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <div class="composer-wrap">
+        <div class="attachment-preview" id="attachmentPreview"></div>
+        <form class="composer" id="composer">
+          <div class="composer-tools">
+            <button type="button" class="round-btn" id="attachBtn" aria-label="Прикрепить файл">＋</button>
+            <button type="button" class="tool-toggle" id="webBtn"><span>◎</span><b>Интернет</b></button>
+            <button type="button" class="tool-toggle" id="imageBtn"><span>✦</span><b>Изображение</b></button>
+          </div>
+          <textarea id="prompt" rows="1" placeholder="Спросите что угодно..." aria-label="Сообщение" inputmode="send" autocomplete="off" autocorrect="on" autocapitalize="sentences"></textarea>
+          <div class="composer-actions">
+            <button type="button" class="round-btn" id="micBtn" aria-label="Голосовой ввод">◉</button>
+            <button type="submit" class="send-btn" id="sendBtn" aria-label="Отправить">↑</button>
+          </div>
+        </form>
+        <p class="disclaimer">NOVA может ошибаться. Проверяйте важную информацию.</p>
+      </div>
+    </main>
+  </div>
+
+  <input type="file" id="fileInput" hidden accept="image/*,.zip,.txt,.md,.json,.csv,.pdf" />
+
+  <dialog class="modal" id="settingsModal">
+    <form method="dialog" class="modal-card" id="settingsForm">
+      <div class="modal-head"><div><p class="eyebrow">КОНФИГУРАЦИЯ</p><h2>Настройки NOVA</h2></div><button class="icon-btn" value="cancel" aria-label="Закрыть">×</button></div>
+      <div class="settings-grid">
+        <nav class="settings-nav"><button type="button" class="active" data-settings-tab="ai">AI и провайдер</button><button type="button" data-settings-tab="interface">Интерфейс</button><button type="button" data-settings-tab="privacy">Приватность</button></nav>
+        <div class="settings-content">
+          <section class="settings-panel active" data-settings-panel="ai">
+          <label>Режим <select id="provider"><option value="puter">Puter Cloud · без API-ключа</option><option value="ollama">Ollama · локально</option></select></label>
+          <label id="endpointField">Адрес Ollama <input id="endpoint" value="http://localhost:11434" disabled title="Настраивается переменной OLLAMA_URL на локальном сервере" /></label>
+          <label>Модель <input id="model" value="gpt-5.4-nano" placeholder="gpt-5.4-nano" /></label>
+          <label>Системная инструкция <textarea id="systemPrompt" rows="4">Ты NOVA — полезный, точный и дружелюбный AI-ассистент. Отвечай на языке пользователя.</textarea></label>
+          <div class="privacy-card"><span>⌾</span><div><b id="privacyTitle">Облачная обработка</b><p id="privacyText">Puter выполняет AI-запросы без API-ключа разработчика. История NOVA хранится в этом браузере.</p></div></div>
+          </section>
+          <section class="settings-panel" data-settings-panel="interface">
+            <label>Тема <select id="interfaceTheme"><option value="dark">Тёмная</option><option value="light">Светлая</option><option value="system">Как в системе</option></select></label>
+            <label>Размер интерфейса <select id="interfaceScale"><option value="90">Компактный · 90%</option><option value="100">Стандартный · 100%</option><option value="110">Крупный · 110%</option></select></label>
+            <label>Плотность элементов <select id="interfaceDensity"><option value="comfortable">Комфортная</option><option value="compact">Компактная</option></select></label>
+            <label class="setting-switch"><span><b>Анимации</b><small>Плавные переходы и движение AI-сферы</small></span><input type="checkbox" id="interfaceAnimations" checked></label>
+          </section>
+          <section class="settings-panel" data-settings-panel="privacy">
+            <label class="setting-switch"><span><b>Сохранять историю чатов</b><small>История хранится только на этом устройстве</small></span><input type="checkbox" id="privacyHistory" checked></label>
+            <div class="privacy-card"><span>⌾</span><div><b>Локальное хранилище</b><p>NOVA не отправляет историю на отдельный сервер. Текст текущего запроса передаётся только выбранному AI-провайдеру.</p></div></div>
+            <div class="privacy-actions"><button type="button" class="secondary" id="exportDataBtn">Экспортировать данные</button><button type="button" class="danger" id="clearHistoryBtn">Удалить всю историю</button></div>
+          </section>
+          <div class="modal-actions"><button value="cancel" class="secondary">Отмена</button><button value="default" id="saveSettings" class="primary">Сохранить</button></div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="modal search-modal" id="searchModal">
+    <div class="modal-card compact"><div class="searchbox"><span>⌕</span><input id="searchInput" placeholder="Поиск по чатам..." autofocus /><button class="icon-btn" data-close="searchModal">×</button></div><div id="searchResults" class="search-results"></div></div>
+  </dialog>
+
+  <div class="voice-layer" id="voiceLayer" aria-modal="true" role="dialog">
+    <div class="voice-top"><span class="voice-brand"><i>✦</i> NOVA Voice</span><span class="voice-live"><i></i> разговор активен</span></div>
+    <div class="voice-stage">
+      <div class="voice-orb-wrap" id="voiceOrb"><div class="voice-ring r1"></div><div class="voice-ring r2"></div><div class="voice-core"><span>✦</span></div></div>
+      <p class="voice-kicker" id="voiceKicker">ГОТОВА К РАЗГОВОРУ</p>
+      <h2 id="voiceStatus">Подключаю микрофон…</h2>
+      <p class="voice-interim" id="voiceInterim">Говорите естественно — NOVA ответит сама</p>
+    </div>
+    <aside class="voice-transcript" id="voiceTranscript"><div class="transcript-head"><b>Текст разговора</b><button id="transcriptClose">×</button></div><div class="transcript-list" id="transcriptList"><p class="transcript-empty">Здесь появится расшифровка разговора</p></div></aside>
+    <div class="voice-controls">
+      <button id="voiceMic" class="voice-control active" aria-label="Выключить микрофон"><span>◉</span><small>Микрофон</small></button>
+      <button id="voiceEnd" class="voice-end"><span>×</span><small>Завершить</small></button>
+      <button id="voiceText" class="voice-control" aria-label="Показать текст разговора"><span>≡</span><small>Текст</small></button>
+      <button id="voiceSettings" class="voice-control" aria-label="Настройки голоса"><span>⚙</span><small>Голос</small></button>
+    </div>
+  </div>
+  <div class="toast-stack" id="toasts"></div>
+  <script>window.NOVA_MOBILE = /NOVAAndroid\/1\.0/.test(navigator.userAgent);</script>
+  <script src="https://js.puter.com/v2/"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="response-system-prompt.js"></script>
+  <script src="app.js"></script>
+  <script src="market-search.js"></script>
+  <script src="multimodal-images.js"></script>
+  <script src="zip-workspace.js"></script>
+  <script src="voice-mode.js"></script>
+  <script>if(window.NOVA_DESKTOP){for(const href of ['project-mode.css','project-projects.css','project-permissions.css','project-spinner.css','project-updater.css']){const c=document.createElement('link');c.rel='stylesheet';c.href=href;document.head.appendChild(c)}const s=document.createElement('script');s.src='project-mode.js';document.body.appendChild(s)}</script>
+</body>
+</html>

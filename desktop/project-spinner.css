@@ -1,0 +1,1 @@
+.dev-agent-form .primary:disabled{cursor:default;opacity:.85;min-width:88px}.dev-task-spinner{display:inline-block;width:15px;height:15px;border:2px solid #ffffff55;border-top-color:#fff;border-radius:50%;animation:dev-spin .7s linear infinite;vertical-align:middle}@keyframes dev-spin{to{transform:rotate(360deg)}}

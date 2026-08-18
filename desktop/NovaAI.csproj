@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType><RootNamespace>NovaAI</RootNamespace><AssemblyName>NOVA AI</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion><LangVersion>latest</LangVersion><AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects><ApplicationManifest>app.manifest</ApplicationManifest><ApplicationIcon>nova.ico</ApplicationIcon><OutputPath>..\dist\NOVA-AI-Windows\</OutputPath><DebugType>none</DebugType><Optimize>true</Optimize><PlatformTarget>x64</PlatformTarget>
+    <FrameworkPathOverride>$(NuGetPackageRoot)microsoft.netframework.referenceassemblies.net48\1.0.3\build\.NETFramework\v4.8\</FrameworkPathOverride>
+  </PropertyGroup>
+  <ItemGroup><Reference Include="System" /><Reference Include="System.Drawing" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Web.Extensions" /><Reference Include="System.IO.Compression" /><Reference Include="System.IO.Compression.FileSystem" /></ItemGroup>
+  <ItemGroup><Compile Include="Program.cs" /><Compile Include="ProjectHost.cs" /><Compile Include="UpdaterService.cs" /><Compile Include="Properties\AssemblyInfo.cs" /></ItemGroup>
+  <ItemGroup><Content Include="nova.ico" /></ItemGroup>
+  <ItemGroup><PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3537.50" /><PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="All" /></ItemGroup>
+  <ItemGroup>
+    <Content Include="..\index.html"><Link>app\index.html</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\styles.css"><Link>app\styles.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\image.css"><Link>app\image.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\voice-mode.css"><Link>app\voice-mode.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\response-system-prompt.js"><Link>app\response-system-prompt.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\app.js"><Link>app\app.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\market-search.js"><Link>app\market-search.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\multimodal-images.js"><Link>app\multimodal-images.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\zip-workspace.js"><Link>app\zip-workspace.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content><Content Include="..\voice-mode.js"><Link>app\voice-mode.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="..\images\icon.png"><Link>app\images\icon.png</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="project-mode.css"><Link>app\project-mode.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="project-projects.css"><Link>app\project-projects.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="project-permissions.css"><Link>app\project-permissions.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="project-spinner.css"><Link>app\project-spinner.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="project-updater.css"><Link>app\project-updater.css</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="project-mode.js"><Link>app\project-mode.js</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

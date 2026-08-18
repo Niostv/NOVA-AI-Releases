@@ -1,0 +1,22 @@
+# Build artifacts
+.android-build/
+android/build/
+dist/
+__pycache__/
+*.pyc
+
+# Desktop build outputs
+desktop/obj/
+desktop/bin/
+
+# Android build outputs
+*.apk
+*.keystore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
