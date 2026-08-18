@@ -1,0 +1,11 @@
+.nms-notification-list{border-radius:27px;overflow:hidden}
+.nms-notification-row{width:100%;min-height:78px;padding:17px 22px;border:0;border-bottom:3px solid #050505;background:#3d3d3f;color:#f7f7f8;display:flex;align-items:center;justify-content:space-between;text-align:left;font:inherit}
+.nms-notification-row:last-child{border-bottom:0}
+.nms-notification-row span{font-size:17px}
+.nms-notification-row small{font-size:16px;color:#cacacd}
+.nms-notification-caption{color:#a8a8ad;font-size:16px;margin:10px 22px 12px}
+.nms-notification-toggle{min-height:80px;border-radius:27px;background:#3d3d3f;padding:15px 22px;display:flex!important;align-items:center;justify-content:space-between!important;color:#f7f7f8!important;font-size:17px!important}
+.nms-notification-toggle .nms-switch{width:58px!important;height:34px!important;padding:0!important;border:0!important;background:#68686c}
+.nms-notification-toggle .nms-switch:after{width:28px;height:28px}
+.nms-notification-toggle .nms-switch:checked:after{transform:translateX(24px)}
+.nms-notification-help{color:#bababe;font-size:15px;line-height:1.5;margin:12px 22px}
